@@ -1,0 +1,6 @@
+{
+  "port": 3100,
+ "dbUrl" : "mongodb+srv://yashclaudeai8:AaaytlH1kSs5G1be@cluster0.5yxxq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "encryptionKey": "simply-invest-encryption-key",
+  "jwtPrivateKey": "simply-invest-private-key"
+}

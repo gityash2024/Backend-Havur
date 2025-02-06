@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const prescription_1 = require("./prescription");
+const router = (0, express_1.Router)();
+router.post("/list", prescription_1.list);
+router.post("/add", prescription_1.add);
+router.post("/update", prescription_1.update);
+router.post("/remove", prescription_1.remove);
+router.post("/remove-prescription-medicine", prescription_1.removePrescriptionMedicines);
+exports.default = router;
