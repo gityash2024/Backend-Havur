@@ -8,16 +8,12 @@ import path from "path";
 export default (app: Application) => {
   app.use(helmet());
   app.use(json());
-  app.use(cors());
-  app.use((Request, Response, next) => {
-    Response.header("Access-Control-Allow-Origin", "*"); // Adjust as necessary
-    Response.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    Response.header("Access-Control-Expose-Headers", "x-auth-token"); // Expose the custom header
-    next();
-  });
+  app.use(cors({
+    origin: "https://admin-havur.vercel.app",
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 
   app.use("/files", express.static(path.join(__dirname, "../../files")));
   app.use("/", router);
