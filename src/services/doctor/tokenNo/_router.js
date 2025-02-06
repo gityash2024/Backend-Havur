@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const tokenNo_1 = require("./tokenNo");
+const router = (0, express_1.Router)();
+router.post("/add", tokenNo_1.add);
+router.post("/list", tokenNo_1.list);
+router.post("/total", tokenNo_1.countTokensToday);
+router.post("/current", tokenNo_1.currentToken);
+router.post("/hospital", tokenNo_1.HospitalCurrentToken);
+exports.default = router;

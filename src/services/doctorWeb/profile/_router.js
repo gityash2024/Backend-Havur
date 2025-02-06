@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const profile_1 = require("./profile");
+const router = (0, express_1.Router)();
+router.post("/view", profile_1.view);
+router.post("/update", profile_1.update);
+router.post("/uploadFile", profile_1.uploadFile);
+router.post("/deleteFile", profile_1.deleteFile);
+router.post("/viewMfile", profile_1.viewMfile);
+router.post("/select-hosital", profile_1.updateSelectedHospital);
+exports.default = router;
